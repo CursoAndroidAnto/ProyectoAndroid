@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Proyecto_SanzPansAntonio</string>
+    <string name="ACEPT">Aceptar</string>
+    <string name="CANCEL">Cancelar</string>
+    <string name="login_user">Usuario</string>
+    <string name="login_password">Contraseña</string>
+    <string name="login_create_acc">¿No tienes cuenta?</string>
+    <string name="login_signup">Regístrate</string>
+    <string name="login">Login</string>
+    <string name="error_user_1">El usuario es incorrecto</string>
+    <string name="error_password_1">La contraseña es incorrecta</string>
+    <string name="error_login">El usuario o la contraseña son incorrectos</string>
+    <string name="index_create_game">Crear partida</string>
+    <string name="index_search_games">Buscar partidas</string>
+    <string name="index_my_games">Mis partidas</string>
+    <string name="index_calendar">Calendario</string>
+    <string name="index_options">Opciones</string>
+    <string name="index">Inicio</string>
+    <string name="create_name">Juego</string>
+    <string name="create_date">Fecha</string>
+    <string name="create_hour">Hora</string>
+    <string name="create_time">Duración</string>
+    <string name="create_address">Dirección</string>
+    <string name="create_players">Jugadores</string>
+    <string name="create_doc">Documentos</string>
+    <string name="create_game">Crear partida</string>
+    <string name="createuser_username">Nombre de usuario</string>
+    <string name="createuser_realname">Nombre real</string>
+    <string name="createuser_lastname">Apellidos</string>
+    <string name="createuser_password">Contraseña</string>
+    <string name="createuser_confirmpassword">Repetir contraseña</string>
+    <string name="createuser_mail">Mail</string>
+    <string name="createuser_confirmmail">Repetir Mail</string>
+    <string name="createuser_date">Año de nacimiento</string>
+</resources>

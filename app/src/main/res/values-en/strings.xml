@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Proyecto_SanzPansAntonio</string>
+    <string name="ACEPT">Accept</string>
+    <string name="CANCEL">Cancel</string>
+    <string name="login_user">User</string>
+    <string name="login_password">Password</string>
+    <string name="login">Login</string>
+    <string name="index_create_game">Create Game</string>
+    <string name="index_search_games">Search Games</string>
+    <string name="index_my_games">My Games</string>
+    <string name="index_calendar">Calendar</string>
+    <string name="index_options">Options</string>
+    <string name="index">Index</string>
+    <string name="create_name">Game</string>
+    <string name="create_date">Date</string>
+    <string name="create_hour">Hour</string>
+    <string name="create_address">Address</string>
+    <string name="create_players">Players</string>
+    <string name="create_game">Create Game</string>
+    <string name="createuser_username">Username</string>
+    <string name="createuser_realname">Real name</string>
+    <string name="createuser_lastname">Last name</string>
+    <string name="createuser_password">Password</string>
+    <string name="createuser_mail">Mail</string>
+    <string name="createuser_confirmpassword">Repeat Password</string>
+    <string name="createuser_confirmmail">Repeat Mail</string>
+    <string name="createuser_date">Year</string>
+</resources>
