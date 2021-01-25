@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20"
+    android:padding="20px"
     tools:context=".Index">
 
     <TextView
@@ -20,43 +20,42 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50"
+        android:layout_marginTop="50px"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/btnGames"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20"
+            android:layout_marginTop="20px"
             android:text="@string/index_my_games" />
 
         <Button
             android:id="@+id/btnSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20"
+            android:layout_marginTop="20px"
             android:text="@string/index_search_games" />
 
         <Button
             android:id="@+id/btnCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20"
+            android:layout_marginTop="20px"
             android:text="@string/index_create_game" />
 
         <Button
             android:id="@+id/btnCalendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20"
+            android:layout_marginTop="20px"
             android:text="@string/index_calendar" />
 
         <Button
             android:id="@+id/btnOptions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20"
+            android:layout_marginTop="20px"
             android:text="@string/index_options" />
     </LinearLayout>
-
 </LinearLayout>

@@ -1,10 +1,10 @@
-package com.example.proyecto_sanzpansantonio;
+package com.example.proyecto_sanzpansantonio.Class;
 
 import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
-public class Mod {
+public class Game {
     class createGameMod implements Serializable {
         private String Name;
         private Date GameDate;

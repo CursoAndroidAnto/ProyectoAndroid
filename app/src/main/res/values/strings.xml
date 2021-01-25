@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Proyecto_SanzPansAntonio</string>
+    <string name="ACEPT">Aceptar</string>
+    <string name="CANCEL">Cancelar</string>
     <string name="login_user">Usuario</string>
     <string name="login_password">Contraseña</string>
     <string name="login_create_acc">¿No tienes cuenta?</string>
@@ -22,4 +24,12 @@
     <string name="create_players">Jugadores</string>
     <string name="create_doc">Documentos</string>
     <string name="create_game">Crear partida</string>
+    <string name="createuser_username">Nombre de usuario</string>
+    <string name="createuser_realname">Nombre real</string>
+    <string name="createuser_lastname">Apellidos</string>
+    <string name="createuser_password">Contraseña</string>
+    <string name="createuser_confirmpassword">Repetir contraseña</string>
+    <string name="createuser_mail">Mail</string>
+    <string name="createuser_confirmmail">Repetir Mail</string>
+    <string name="createuser_date">Año de nacimiento</string>
 </resources>

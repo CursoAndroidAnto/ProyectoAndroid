@@ -1,7 +1,8 @@
 package com.example.proyecto_sanzpansantonio;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Debug;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,8 +28,24 @@ public class Login extends AppCompatActivity {
     public void onClickLogin(View view) {
         String username = txtUser.getText().toString();
         String password = txtPassword.getText().toString();
+        login(username, password);
     }
-    private void Login(String user, String password){
-
+    private void login(String user, String password){
+        if (user.equals("anto") && password.equals("anto")){
+            //AQUI VA UN SPINNER DE CARGA Y REDIRECCIONA A INDEX
+            lbLoginError.setVisibility(View.INVISIBLE);
+            loginSuccess();
+        } else {
+            lbLoginError.setTextColor(Color.RED);
+            lbLoginError.setVisibility(View.VISIBLE);
+        }
+    }
+    private void loginSuccess(){
+        Intent i = new Intent(this, Index.class);
+        startActivity(i);
+    }
+    public void changeToCreateUser(View view){
+        Intent i = new Intent(this, CreateUser.class);
+        startActivity(i);
     }
 }

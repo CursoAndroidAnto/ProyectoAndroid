@@ -37,7 +37,7 @@ public class CreateGame extends AppCompatActivity {
         String address = inputAddress.getText().toString();
         Integer players = Integer.parseInt( inputPlayers.getText().toString());
 
-       // Mod.createGameMod db = new Mod.createGameMod(name, date, hour, gametime, address, players)
+       // Class.Mod.createGameMod db = new Mod.createGameMod(name, date, hour, gametime, address, players)
     }
 
 }
