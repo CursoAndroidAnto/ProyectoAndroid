@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20px"
+    android:layout_margin="40px"
     android:orientation="vertical"
     tools:context=".CreateGame">
 
@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/create_game"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -156,7 +157,7 @@
         <LinearLayout
             android:id="@+id/lyDoc"
             android:layout_width="match_parent"
-            android:layout_height="362dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
@@ -170,16 +171,27 @@
         <LinearLayout
             android:id="@+id/lyCreateGame"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/btnCreateGame"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10px"
                 android:layout_weight="1"
                 android:onClick="CreateGame"
-                android:text="@string/create_game" />
+                android:text="@string/create_game"
+                app:backgroundTint="@android:color/holo_green_dark" />
+
+            <Button
+                android:id="@+id/btnCreateGameBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10px"
+                android:layout_weight="1"
+                android:text="@string/CANCEL"
+                app:backgroundTint="@color/cardview_dark_background" />
+
         </LinearLayout>
 
     </LinearLayout>

@@ -4,7 +4,7 @@
     android:id="@+id/body_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20px"
+    android:layout_margin="40px"
     android:orientation="vertical">
 
     <LinearLayout
@@ -57,7 +57,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:autofillHints="" />
 
         <TextView
             android:id="@+id/lbPasswordError"
@@ -71,7 +72,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="77dp"
+        android:layout_height="107dp"
         android:orientation="vertical">
 
         <TextView
@@ -99,17 +100,19 @@
         <TextView
             android:id="@+id/lbCreateText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="@string/login_create_acc"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/lbSignUp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:onClick="changeToCreateUser"
             android:text="@string/login_signup"
             android:textAlignment="center"
+            android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
 

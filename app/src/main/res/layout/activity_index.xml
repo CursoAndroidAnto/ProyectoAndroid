@@ -5,8 +5,9 @@
     android:id="@+id/index_body"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="40px"
     android:orientation="vertical"
-    android:padding="20px"
+    android:padding="0px"
     tools:context=".Index">
 
     <TextView
@@ -15,7 +16,7 @@
         android:layout_height="wrap_content"
         android:text="@string/index"
         android:textAlignment="center"
-        android:textSize="30sp" />
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20px"
+            android:onClick="onClickButton"
             android:text="@string/index_my_games" />
 
         <Button
@@ -35,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20px"
+            android:onClick="onClickButton"
             android:text="@string/index_search_games" />
 
         <Button
@@ -42,6 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20px"
+            android:onClick="onClickButton"
             android:text="@string/index_create_game" />
 
         <Button
@@ -49,6 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20px"
+            android:onClick="onClickButton"
             android:text="@string/index_calendar" />
 
         <Button
@@ -56,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20px"
+            android:onClick="onClickButton"
             android:text="@string/index_options" />
     </LinearLayout>
 </LinearLayout>

@@ -4,8 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="40px"
     android:orientation="vertical"
     tools:context=".CreateUser">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/createuser_title"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
     <LinearLayout
         android:id="@+id/lyUserName"
@@ -199,15 +208,17 @@
             android:layout_margin="10px"
             android:layout_weight="1"
             android:onClick="onClickCreate"
-            android:text="@string/ACEPT" />
+            android:text="@string/ACEPT"
+            app:backgroundTint="@android:color/holo_green_dark" />
 
         <Button
-            android:id="@+id/btnCancelCreateUser"
+            android:id="@+id/btnBackCalendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10px"
             android:layout_weight="1"
             android:onClick="onClickCancel"
-            android:text="@string/CANCEL" />
+            android:text="@string/CANCEL"
+            app:backgroundTint="@color/cardview_dark_background" />
     </LinearLayout>
 </LinearLayout>

@@ -33,4 +33,10 @@
     <string name="createuser_mail">Mail</string>
     <string name="createuser_confirmmail">Repetir Mail</string>
     <string name="createuser_date">Año de nacimiento</string>
+    <string name="createuser_title">Crear usuario</string>
+    <string name="calendar">Calendario</string>
+    <string name="create_user">Crear usuario</string>
+    <string name="my_games">Mis partidas</string>
+    <string name="search_game">Buscar partida</string>
+    <string name="BACK">Volver</string>
 </resources>

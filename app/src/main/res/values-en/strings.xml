@@ -26,4 +26,11 @@
     <string name="createuser_confirmpassword">Repeat Password</string>
     <string name="createuser_confirmmail">Repeat Mail</string>
     <string name="createuser_date">Year</string>
+    <string name="createuser_title">Create user</string>
+    <string name="calendar">Calendar</string>
+    <string name="create_user">Create User</string>
+    <string name="my_games">My Games</string>
+    <string name="search_game">Search Games</string>
+    <string name="login_signup">Sign In</string>
+    <string name="BACK">Back</string>
 </resources>
