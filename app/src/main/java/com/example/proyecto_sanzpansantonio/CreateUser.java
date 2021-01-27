@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.proyecto_sanzpansantonio.Class.User;
+import com.example.proyecto_sanzpansantonio.Modelos.User;
 
 public class CreateUser extends AppCompatActivity {
     TextView inUserName, inRealName, inLastName, inPassword, inConfirmPassword, inMail, inConfirmMail, inDate;

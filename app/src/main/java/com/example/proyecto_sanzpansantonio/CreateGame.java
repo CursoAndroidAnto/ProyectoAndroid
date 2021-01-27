@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.proyecto_sanzpansantonio.Modelos.Game;
+
 import java.sql.Date;
 import java.sql.Time;
 
@@ -33,13 +35,17 @@ public class CreateGame extends AppCompatActivity {
     public void CreateGame(View view) {
 
         String name = inputName.getText().toString();
-        //Date date = inputDate.getText();
-        //Time hour = inputHour.getText();
+        String date = inputDate.getText().toString();
+        String hour = inputHour.getText().toString();
         Integer gametime = Integer.parseInt(inputTime.getText().toString());
         String address = inputAddress.getText().toString();
         Integer players = Integer.parseInt(inputPlayers.getText().toString());
 
         // Class.Mod.createGameMod db = new Mod.createGameMod(name, date, hour, gametime, address, players)
+
+        //createGameMod(String name, Date gameDate, Time gameHour, Integer gameTime, String address, Integer maxPlayers)
+
+        //Game g = new Game(name, date, hour, gametime, address, players);
     }
 
     public void backIndex(View v) {

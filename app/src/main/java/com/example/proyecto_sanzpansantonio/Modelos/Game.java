@@ -1,11 +1,10 @@
-package com.example.proyecto_sanzpansantonio.Class;
+package com.example.proyecto_sanzpansantonio.Modelos;
 
 import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
-public class Game {
-    class createGameMod implements Serializable {
+public class Game implements Serializable {
         private String Name;
         private Date GameDate;
         private Time GameHour;
@@ -13,7 +12,7 @@ public class Game {
         private String Address;
         private Integer MaxPlayers;
 
-        public createGameMod(String name, Date gameDate, Time gameHour, Integer gameTime, String address, Integer maxPlayers) {
+        public Game(String name, Date gameDate, Time gameHour, Integer gameTime, String address, Integer maxPlayers) {
             Name = name;
             GameDate = gameDate;
             GameHour = gameHour;
@@ -70,4 +69,3 @@ public class Game {
             MaxPlayers = maxPlayers;
         }
     }
-}

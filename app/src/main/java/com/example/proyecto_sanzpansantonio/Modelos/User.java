@@ -1,7 +1,6 @@
-package com.example.proyecto_sanzpansantonio.Class;
+package com.example.proyecto_sanzpansantonio.Modelos;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class User implements Serializable {
     private Integer Id;
