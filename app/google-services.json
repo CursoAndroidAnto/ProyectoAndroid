@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "73884001725",
+    "project_id": "proyectoandroid2021",
+    "storage_bucket": "proyectoandroid2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73884001725:android:6229d64217eb0ca5d45ed4",
+        "android_client_info": {
+          "package_name": "com.example.proyecto_sanzpansantonio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "73884001725-e4d043i0s24jsdsvv12ti9odgas3us6g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsmJ-th4pHiTVf1hwluO1fnNuAw2uUjAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "73884001725-e4d043i0s24jsdsvv12ti9odgas3us6g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

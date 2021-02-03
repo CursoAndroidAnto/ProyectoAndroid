@@ -64,29 +64,34 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/editTextNumber3"
+                    android:id="@+id/inCGDateDD"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="Dia"
-                    android:inputType="number" />
+                    android:hint="@string/hint_day"
+                    android:inputType="number"
+                    android:maxLength="2" />
 
                 <EditText
-                    android:id="@+id/editTextNumber2"
+                    android:id="@+id/inCGDateMM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:hint="@string/hint_month"
+                    android:inputType="number"
+                    android:maxLength="2" />
 
                 <EditText
-                    android:id="@+id/editTextNumber"
+                    android:id="@+id/inCGDateYYYY"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:hint="@string/hint_year"
+                    android:inputType="number"
+                    android:maxLength="4" />
             </LinearLayout>
 
         </LinearLayout>
@@ -101,16 +106,45 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="@string/create_hour" />
 
-            <EditText
-                android:id="@+id/inputHour"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:ems="10"
-                android:inputType="time" />
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/inputHour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:ems="10"
+                    android:inputType="time"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/inCGTimeHH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/hint_hour"
+                    android:inputType="numberSigned"
+                    android:maxLength="2" />
+
+                <EditText
+                    android:id="@+id/inCGTimeMM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/hint_min"
+                    android:inputType="numberSigned"
+                    android:maxLength="2" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -183,7 +217,8 @@
             android:id="@+id/lyDoc"
             android:layout_width="match_parent"
             android:layout_height="343dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <Button
                 android:id="@+id/btnDoc"
@@ -196,7 +231,8 @@
         <LinearLayout
             android:id="@+id/lyCreateGame"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="bottom">
 
             <Button
                 android:id="@+id/btnCreateGame"

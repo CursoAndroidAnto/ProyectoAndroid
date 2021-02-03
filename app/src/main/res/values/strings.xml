@@ -4,6 +4,11 @@
     <string name="ACEPT">Aceptar</string>
     <string name="CANCEL">Cancelar</string>
     <string name="BACK">Volver</string>
+    <string name="hint_day">DD</string>
+    <string name="hint_month">MM</string>
+    <string name="hint_year">YYYY</string>
+    <string name="hint_hour">hh</string>
+    <string name="hint_min">mm</string>
     <!-- TITULOS -->
     <string name="index">Index</string>
     <string name="login">Login</string>
@@ -25,8 +30,8 @@
     <!-- CREATE GAME -->
     <string name="create_name">Juego</string>
     <string name="create_date">Fecha</string>
-    <string name="create_hour">Hora</string>
-    <string name="create_time">Duración</string>
+    <string name="create_hour">Hora (24h)</string>
+    <string name="create_time">Duración (h)</string>
     <string name="create_address">Dirección</string>
     <string name="create_players">Jugadores</string>
     <string name="create_doc">Documentos</string>

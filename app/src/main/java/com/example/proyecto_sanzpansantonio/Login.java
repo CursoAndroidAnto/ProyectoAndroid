@@ -1,51 +1,104 @@
 package com.example.proyecto_sanzpansantonio;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Login extends AppCompatActivity {
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+public class Login extends AppCompatActivity implements View.OnClickListener {
+
     private TextView txtUser, txtPassword, lbLoginError;
     private Button btnLogin;
+    private FirebaseAuth mAuth;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        txtUser = findViewById(R.id.txtUser);
-        txtPassword = findViewById(R.id.txtPassword);
-
-        lbLoginError = findViewById(R.id.lbLoginError);
-
+        this.mAuth = FirebaseAuth.getInstance();
+        this.txtUser = findViewById(R.id.txtUser);
+        this.txtPassword = findViewById(R.id.txtPassword);
+        this.lbLoginError = findViewById(R.id.lbLoginError);
+        this.btnLogin = findViewById(R.id.btnLogin);
+        this.btnLogin.setOnClickListener(this);
+        this.progressDialog = new ProgressDialog(this);
     }
 
-    public void onClickLogin(View view) {
-        String username = txtUser.getText().toString();
+    @Override
+    public void onClick(View v) {
+        //Invocamos al método:
+        LoginFirebase();
+    }
+
+    private void LoginFirebase() {
+        String email = txtUser.getText().toString();
         String password = txtPassword.getText().toString();
-        login(username, password);
-    }
-    private void login(String user, String password){
-        if (user.equals("anto") && password.equals("anto")){
-            //AQUI VA UN SPINNER DE CARGA Y REDIRECCIONA A INDEX
-            lbLoginError.setVisibility(View.INVISIBLE);
-            loginSuccess();
-        } else {
-            lbLoginError.setTextColor(Color.RED);
-            lbLoginError.setVisibility(View.VISIBLE);
+
+        //Verificamos que las cajas de texto no estén vacías
+        if (TextUtils.isEmpty(email)) {
+            showToast("Usuario vacío");
+            return;
         }
+        if (TextUtils.isEmpty(password)) {
+            showToast("Contraseña vacía");
+            return;
+        }
+        signInFirebaseUser(email, password);
     }
-    private void loginSuccess(){
+
+    private void signInFirebaseUser(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            showToast("Login success.");
+                            loginSuccess();
+                            //updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            showToast( "Authentication failed.");
+                            //updateUI(null);
+                        }
+
+                        progressDialog.dismiss();
+                    }
+                });
+    }
+
+    private void loginSuccess() {
         Intent i = new Intent(this, Index.class);
         startActivity(i);
     }
-    public void changeToCreateUser(View view){
-        Intent i = new Intent(this, CreateUser.class);
+
+    public void changeToCreateUser(View view) {
+        Intent i = new Intent(this, CreateAccountFirebase.class);
         startActivity(i);
+    }
+
+    private void showToast(String text) {
+        Toast.makeText(Login.this, text, Toast.LENGTH_SHORT).show();
+    }
+
+    private void showProgressDialog(String text) {
+        progressDialog.setMessage(text);
+        progressDialog.show();
     }
 }

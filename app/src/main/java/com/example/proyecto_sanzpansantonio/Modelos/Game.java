@@ -6,13 +6,13 @@ import java.util.Date;
 
 public class Game implements Serializable {
         private String Name;
-        private Date GameDate;
-        private Time GameHour;
+        private String GameDate;
+        private String GameHour;
         private Integer GameTime;
         private String Address;
         private Integer MaxPlayers;
 
-        public Game(String name, Date gameDate, Time gameHour, Integer gameTime, String address, Integer maxPlayers) {
+        public Game(String name, String gameDate, String gameHour, Integer gameTime, String address, Integer maxPlayers) {
             Name = name;
             GameDate = gameDate;
             GameHour = gameHour;
@@ -29,19 +29,19 @@ public class Game implements Serializable {
             Name = name;
         }
 
-        public Date getGameDate() {
+        public String getGameDate() {
             return GameDate;
         }
 
-        public void setGameDate(Date gameDate) {
+        public void setGameDate(String gameDate) {
             GameDate = gameDate;
         }
 
-        public Time getGameHour() {
+        public String getGameHour() {
             return GameHour;
         }
 
-        public void setGameHour(Time gameHour) {
+        public void setGameHour(String gameHour) {
             GameHour = gameHour;
         }
 

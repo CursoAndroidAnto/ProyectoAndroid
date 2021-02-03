@@ -18,7 +18,6 @@ public class CreateUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
-
         inUserName = findViewById(R.id.inUserName);
         inRealName = findViewById(R.id.inRealName);
         inLastName = findViewById(R.id.inLastName);
@@ -74,5 +73,4 @@ public class CreateUser extends AppCompatActivity {
                 Integer.parseInt(inDate.getText().toString())
         );
     }
-
 }

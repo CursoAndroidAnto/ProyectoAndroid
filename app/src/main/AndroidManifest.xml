@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_SanzPansAntonio">
-        <activity android:name=".CreateUser"></activity>
+        <activity android:name=".CreateAccountFirebase"></activity>
+        <activity android:name=".CreateUser" />
         <activity android:name=".Calendar" />
         <activity android:name=".MyGames" />
         <activity android:name=".SearchGame" />
@@ -23,5 +24,5 @@
             </intent-filter>
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="40px"
+    android:layout_margin="30dp"
     android:orientation="vertical"
-    tools:context=".CreateUser">
+    tools:context=".CreateAccountFirebase">
 
     <TextView
         android:id="@+id/textView9"
@@ -15,74 +15,6 @@
         android:text="@string/createuser_title"
         android:textAlignment="center"
         android:textSize="18sp" />
-
-    <LinearLayout
-        android:id="@+id/lyUserName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/lbName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/createuser_username" />
-
-        <EditText
-            android:id="@+id/inUserName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lyRealName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/lbRealName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/createuser_realname" />
-
-        <EditText
-            android:id="@+id/inRealName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lyLastName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/lbLastName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/createuser_lastname" />
-
-        <EditText
-            android:id="@+id/inLastName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/lyMail"
@@ -172,30 +104,9 @@
             android:inputType="textPassword" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/lyDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/lbUserDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/createuser_date" />
-
-        <EditText
-            android:id="@+id/inUserDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="numberSigned" />
-
-    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lyBtnFire"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
@@ -206,9 +117,8 @@
             android:id="@+id/btnAcceptCreateUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10px"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:onClick="onClickCreate"
             android:text="@string/ACEPT"
             app:backgroundTint="@android:color/holo_green_dark" />
 
@@ -216,9 +126,8 @@
             android:id="@+id/btnBackCalendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10px"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:onClick="onClickCancel"
             android:text="@string/CANCEL"
             app:backgroundTint="@color/cardview_dark_background" />
     </LinearLayout>

@@ -33,4 +33,7 @@
     <string name="search_game">Search Games</string>
     <string name="login_signup">Sign In</string>
     <string name="BACK">Back</string>
+    <string name="hint_day">DD</string>
+    <string name="hint_month">MM</string>
+    <string name="hint_year">YYYY</string>
 </resources>

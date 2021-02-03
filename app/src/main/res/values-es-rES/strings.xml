@@ -39,4 +39,7 @@
     <string name="my_games">Mis partidas</string>
     <string name="search_game">Buscar partida</string>
     <string name="BACK">Volver</string>
+    <string name="hint_day">DD</string>
+    <string name="hint_month">MM</string>
+    <string name="hint_year">YYYY</string>
 </resources>
