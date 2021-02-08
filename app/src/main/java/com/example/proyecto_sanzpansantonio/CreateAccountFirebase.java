@@ -48,14 +48,11 @@ public class CreateAccountFirebase extends AppCompatActivity implements View.OnC
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
     }
 
     @Override
     public void onClick(View v) {
-        //Invocamos al método:
         createAccount();
     }
 
@@ -66,27 +63,25 @@ public class CreateAccountFirebase extends AppCompatActivity implements View.OnC
 
         //Verificamos que las cajas de texto no estén vacías
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, "Usuario vacío", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Usuario vacío", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Contraseña vacía", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Contraseña vacía", Toast.LENGTH_SHORT).show();
             return;
         }
-        if(inMail.toString().equals(inMailC.toString())){
-            Toast.makeText(this, "El correo no coincide", Toast.LENGTH_LONG).show();
+        if (inMail.toString().equals(inMailC.toString())) {
+            Toast.makeText(this, "El correo no coincide", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (inPass.toString().equals(inPassC.toString())){
-            Toast.makeText(this, "La contraseña no coincide", Toast.LENGTH_LONG).show();
+        if (inPass.toString().equals(inPassC.toString())) {
+            Toast.makeText(this, "La contraseña no coincide", Toast.LENGTH_SHORT).show();
             return;
         }
 
         progressDialog.setMessage("Realizando registro en linea...");
         progressDialog.show();
 
-
-        //Creando un nuevo usuario
         createAccountFirebase(email, password);
 
     }
@@ -97,21 +92,21 @@ public class CreateAccountFirebase extends AppCompatActivity implements View.OnC
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(CreateAccountFirebase.this, "Usuario registrado.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CreateAccountFirebase.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
+
                             redirectApp();
                             //updateUI(user);
                         } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(CreateAccountFirebase.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
+                            String e = task.getException().toString();
+                            Toast.makeText(CreateAccountFirebase.this, e, Toast.LENGTH_SHORT).show();
                         }
-
                         progressDialog.dismiss();
                     }
                 });
     }
-    private void redirectApp(){
+
+    private void redirectApp() {
         progressDialog.dismiss();
         Intent i = new Intent(this, Login.class);
         startActivity(i);

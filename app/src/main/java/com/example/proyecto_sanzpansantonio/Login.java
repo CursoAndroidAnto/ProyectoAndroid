@@ -2,7 +2,6 @@ package com.example.proyecto_sanzpansantonio;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -26,11 +26,16 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
 
+    static String UID;
+    static String EMAIL;
+
+    //CommonMethods cm = new CommonMethods();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        UID = "";
         this.mAuth = FirebaseAuth.getInstance();
         this.txtUser = findViewById(R.id.txtUser);
         this.txtPassword = findViewById(R.id.txtPassword);
@@ -43,6 +48,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         //Invocamos al método:
+        //cm.customProgressDialog(true, "Login...");
+        showProgressDialog("Login...");
         LoginFirebase();
     }
 
@@ -52,11 +59,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         //Verificamos que las cajas de texto no estén vacías
         if (TextUtils.isEmpty(email)) {
-            showToast("Usuario vacío");
+            Toast.makeText(this, "Usuario vacío", Toast.LENGTH_LONG).show();
+
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            showToast("Contraseña vacía");
+            Toast.makeText(this, "Contraseña vacía", Toast.LENGTH_LONG).show();
             return;
         }
         signInFirebaseUser(email, password);
@@ -69,15 +77,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-                            showToast("Login success.");
+                            UID = user.getUid();
+                            EMAIL = user.getEmail();
+                            Toast.makeText(Login.this, "Login success", Toast.LENGTH_LONG).show();
                             loginSuccess();
-                            //updateUI(user);
                         } else {
-                            // If sign in fails, display a message to the user.
-                            showToast( "Authentication failed.");
-                            //updateUI(null);
+                            Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_LONG).show();
                         }
-
                         progressDialog.dismiss();
                     }
                 });
@@ -93,9 +99,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         startActivity(i);
     }
 
-    private void showToast(String text) {
-        Toast.makeText(Login.this, text, Toast.LENGTH_SHORT).show();
-    }
 
     private void showProgressDialog(String text) {
         progressDialog.setMessage(text);

@@ -133,7 +133,8 @@
                     android:ems="10"
                     android:hint="@string/hint_hour"
                     android:inputType="numberSigned"
-                    android:maxLength="2" />
+                    android:maxLength="2"
+                    android:text="12" />
 
                 <EditText
                     android:id="@+id/inCGTimeMM"
@@ -143,7 +144,8 @@
                     android:ems="10"
                     android:hint="@string/hint_min"
                     android:inputType="numberSigned"
-                    android:maxLength="2" />
+                    android:maxLength="2"
+                    android:text="00" />
             </LinearLayout>
         </LinearLayout>
 
@@ -250,6 +252,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10px"
                 android:layout_weight="1"
+                android:onClick="backIndex"
                 android:text="@string/CANCEL"
                 app:backgroundTint="@color/cardview_dark_background" />
 
