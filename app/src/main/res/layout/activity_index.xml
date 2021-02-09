@@ -5,7 +5,7 @@
     android:id="@+id/index_body"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="40px"
+    android:layout_margin="20dp"
     android:orientation="vertical"
     android:padding="0px"
     tools:context=".Index">
