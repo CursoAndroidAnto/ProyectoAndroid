@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.proyecto_sanzpansantonio.Modelos.Game;
 
@@ -26,7 +29,6 @@ public class SearchGame extends AppCompatActivity {
         setContentView(R.layout.activity_search_game);
         rvSearchGame = findViewById(R.id.rvSearchGame);
         inSearchGameFilter = findViewById(R.id.inSearchGameFilter);
-
 
 
         BaseDatosHelper gamelistbd = new BaseDatosHelper(getApplicationContext(), "PROYECTOANDROID", null, 1);
@@ -52,6 +54,21 @@ public class SearchGame extends AppCompatActivity {
             this.rvSearchGame.setAdapter(this.myAdapter);
             this.rvSearchGame.setHasFixedSize(true);
             this.rvSearchGame.setLayoutManager(new LinearLayoutManager(this));
+
+        Adaptador adapter = new Adaptador(data);
+
+        adapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(SearchGame.this, "Click en tarjeta" + data.get(rvSearchGame.getChildAdapterPosition(v)), Toast.LENGTH_LONG).show();
+            }
+        });
         }
     }
+
+    public void goIndex(View v) {
+        Intent i = new Intent(this, Index.class);
+        startActivity(i);
+    }
+
 }

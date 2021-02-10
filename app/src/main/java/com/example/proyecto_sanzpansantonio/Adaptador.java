@@ -12,8 +12,9 @@ import com.example.proyecto_sanzpansantonio.Modelos.Game;
 
 import java.util.List;
 
-public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
+public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> implements View.OnClickListener {
     private List<Game> games;
+    private View.OnClickListener listener;
 
     public Adaptador(List<Game> games) {
         System.out.println("DEBUG Adaptador");
@@ -26,6 +27,9 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
         System.out.println("DEBUG onCreateViewHolder");
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.game_list, parent, false);
         ViewHolder viewHolder = new ViewHolder(v);
+
+        v.setOnClickListener(this);
+
         return viewHolder;
     }
 
@@ -49,6 +53,18 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
         return games.size();
     }
 
+    public void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        System.out.println("Click!");
+        if (listener != null)
+            listener.onClick(v);
+
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txtNombre;
         private TextView txtPlayers;
@@ -59,7 +75,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
             super(itemView);
             System.out.println("DEBUG ViewHolder");
             txtNombre = itemView.findViewById(R.id.lbCardName);
-            txtPlayers = itemView.findViewById(R.id.lbCardPlayers);
+            txtPlayers = itemView.findViewById(R.id.lbCardDate);
             txtDate = itemView.findViewById(R.id.lbCardDate);
             txtHour = itemView.findViewById(R.id.lbCardHour);
         }

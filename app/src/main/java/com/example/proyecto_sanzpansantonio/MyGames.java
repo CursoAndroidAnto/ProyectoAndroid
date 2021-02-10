@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 import com.example.proyecto_sanzpansantonio.Modelos.Game;
@@ -54,5 +56,10 @@ public class MyGames extends AppCompatActivity {
             this.rvMyGames.setHasFixedSize(true);
             this.rvMyGames.setLayoutManager(new LinearLayoutManager(this));
         }
+    }
+
+    public void goIndex(View v) {
+        Intent i = new Intent(this, Index.class);
+        startActivity(i);
     }
 }

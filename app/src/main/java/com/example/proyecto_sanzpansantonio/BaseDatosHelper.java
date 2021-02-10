@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class BaseDatosHelper extends SQLiteOpenHelper {
 
-    String sqlUserCreate = "CREATE TABLE USER(ID STRING, MAIL VARCHAR (40), USERNAME VARCHAR(40), NAME VARCHAR(40), LASTNAME VARCHAR(40), BDATE VARCHAR(40));";
+    String sqlUserCreate = "CREATE TABLE USER(ID STRING , MAIL VARCHAR (40), USERNAME VARCHAR(40), NAME VARCHAR(40), LASTNAME VARCHAR(40), BDATE VARCHAR(40));";
     String sqlGameCreate = "CREATE TABLE GAME(ID INT, USERID VARCHAR(40), NAME VARCHAR(40), GAME_DATE VARCHAR(40), GAME_HOUR VARCHAR(40), GAME_DURATION INT, ADDRESS VARCHAR(40), MAX_PLAYERS INT);";
 
     public BaseDatosHelper(Context contexto, String nombre, SQLiteDatabase.CursorFactory factory, int version) {
