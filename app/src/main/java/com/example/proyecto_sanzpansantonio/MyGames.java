@@ -27,6 +27,8 @@ public class MyGames extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_games);
 
+        Index.FILENAME = "MyGames";
+
         this.uid = Login.UID;
         this.rvMyGames = findViewById(R.id.rvMyGames);
         this.inMyGamesFilter = findViewById(R.id.inMyGamesFilter);

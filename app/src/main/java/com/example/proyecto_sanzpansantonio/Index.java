@@ -19,6 +19,7 @@ public class Index extends AppCompatActivity {
     private String email;
     SQLiteDatabase db = null;
     //CommonMethods cm = new CommonMethods();
+    public static String FILENAME ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class Index extends AppCompatActivity {
         this.uid = Login.UID;
         this.email = Login.EMAIL;
         createDDBB();
+
     }
 
     public void onClickButton(View v) {

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.proyecto_sanzpansantonio">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_SanzPansAntonio">
-        <activity android:name=".CreateAccountFirebase"></activity>
+        <activity android:name=".Options"></activity>
+        <activity android:name=".CreateAccountFirebase" />
         <activity android:name=".CreateUser" />
         <activity android:name=".Calendar" />
         <activity android:name=".MyGames" />
@@ -24,5 +27,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>

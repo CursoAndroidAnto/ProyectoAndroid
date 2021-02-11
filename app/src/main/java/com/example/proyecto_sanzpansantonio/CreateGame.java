@@ -28,7 +28,6 @@ public class CreateGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_game);
 
-
         inName = findViewById(R.id.inputName);
         //inputDate = findViewById(R.id.inputDate);
         inDateD = findViewById(R.id.inCGDateDD);

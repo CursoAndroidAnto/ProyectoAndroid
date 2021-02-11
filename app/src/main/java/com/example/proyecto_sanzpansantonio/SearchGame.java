@@ -30,6 +30,8 @@ public class SearchGame extends AppCompatActivity {
         rvSearchGame = findViewById(R.id.rvSearchGame);
         inSearchGameFilter = findViewById(R.id.inSearchGameFilter);
 
+        Index.FILENAME = "SearchGame";
+
 
         BaseDatosHelper gamelistbd = new BaseDatosHelper(getApplicationContext(), "PROYECTOANDROID", null, 1);
         db = gamelistbd.getReadableDatabase();
@@ -55,20 +57,23 @@ public class SearchGame extends AppCompatActivity {
             this.rvSearchGame.setHasFixedSize(true);
             this.rvSearchGame.setLayoutManager(new LinearLayoutManager(this));
 
-        Adaptador adapter = new Adaptador(data);
-
-        adapter.setOnClickListener(new View.OnClickListener() {
+            Adaptador adapter = new Adaptador(data);
+       /*
+       adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(SearchGame.this, "Click en tarjeta" + data.get(rvSearchGame.getChildAdapterPosition(v)), Toast.LENGTH_LONG).show();
             }
         });
+
+        */
         }
-    }
 
-    public void goIndex(View v) {
-        Intent i = new Intent(this, Index.class);
-        startActivity(i);
-    }
+        }
 
-}
+        public void goIndex (View v){
+            Intent i = new Intent(this, Index.class);
+            startActivity(i);
+        }
+
+    }
