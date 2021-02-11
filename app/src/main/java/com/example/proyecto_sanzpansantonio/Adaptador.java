@@ -134,7 +134,6 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
             dialog.show();
         }
 
-
         private Integer getJoinedPlayers(Game game) {
             BaseDatosHelper ddbb = new BaseDatosHelper(itemView.getContext(), "PROYECTOANDROID", null, 1);
             SQLiteDatabase db = ddbb.getWritableDatabase();

@@ -29,8 +29,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     static String UID;
     static String EMAIL;
 
-    //CommonMethods cm = new CommonMethods();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +45,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        //Invocamos al método:
-        //cm.customProgressDialog(true, "Login...");
         showProgressDialog("Login...");
         LoginFirebase();
     }
@@ -56,8 +52,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private void LoginFirebase() {
         String email = txtUser.getText().toString();
         String password = txtPassword.getText().toString();
-
-        //Verificamos que las cajas de texto no estén vacías
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Usuario vacío", Toast.LENGTH_LONG).show();
 
