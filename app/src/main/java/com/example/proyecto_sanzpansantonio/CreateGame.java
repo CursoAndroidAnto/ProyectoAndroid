@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.proyecto_sanzpansantonio.Modelos.DateValidator;
 import com.example.proyecto_sanzpansantonio.Modelos.DateValidatorUsingDateFormat;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,25 +23,28 @@ public class CreateGame extends AppCompatActivity {
     private TextView inName, inputDate, inputHour, inputDuration, inputAddress, inputPlayers, inDateD, inDateM, inDateY, inCGTimeH, inCGTimeM;
     private Button btnDoc, btnCreate;
     SQLiteDatabase db = null;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_game);
 
-        inName = findViewById(R.id.inputName);
-        //inputDate = findViewById(R.id.inputDate);
-        inDateD = findViewById(R.id.inCGDateDD);
-        inDateM = findViewById(R.id.inCGDateMM);
-        inDateY = findViewById(R.id.inCGDateYYYY);
-        inCGTimeH = findViewById(R.id.inCGTimeHH);
-        inCGTimeM = findViewById(R.id.inCGTimeHH);
-        //inputHour = findViewById(R.id.inputHour);
-        inputDuration = findViewById(R.id.inputTime);
-        inputAddress = findViewById(R.id.inputAddress);
-        inputPlayers = findViewById(R.id.inputPlayers);
-        btnDoc = findViewById(R.id.btnDoc);
-        btnCreate = findViewById(R.id.btnCreate);
+        this.inName = findViewById(R.id.inputName);
+        //this.inputDate = findViewById(R.id.inputDate);
+        this.inDateD = findViewById(R.id.inCGDateDD);
+        this.inDateM = findViewById(R.id.inCGDateMM);
+        this.inDateY = findViewById(R.id.inCGDateYYYY);
+        this.inCGTimeH = findViewById(R.id.inCGTimeHH);
+        this.inCGTimeM = findViewById(R.id.inCGTimeMM);
+        //this.inputHour = findViewById(R.id.inputHour);
+        this.inputDuration = findViewById(R.id.inputTime);
+        this.inputAddress = findViewById(R.id.inputAddress);
+        this.inputPlayers = findViewById(R.id.inputPlayers);
+        this.btnDoc = findViewById(R.id.btnDoc);
+        this.btnCreate = findViewById(R.id.btnCreate);
+
+        this.mAuth = FirebaseAuth.getInstance();
 
         SQLiteDatabase db = null;
     }
@@ -116,15 +120,10 @@ public class CreateGame extends AppCompatActivity {
         c = validator.isValid(strDate);
         //Valido y genero una hora válida.
         String hhmm = createTimeFormat(h, min);
-
         //Obtiene la fecha actual
         String localdate = getLocalDate();
         //Crear fecha válida con hora
         String strDatehhmm = strDate + " " + hhmm + ":00";
-
-        //Comparar que la fecha proporcionada por el usuario es posterior a la fecha actual.
-
-
         return c;
     }
 
@@ -178,4 +177,14 @@ public class CreateGame extends AppCompatActivity {
     //private Date parseStringToDate( String d){
     //Date parsedDate = new SimpleDateFormat("dd/MM/yyyy").parse(d);
     //}
+    private void logOut(View view) {
+        goLogin();
+    }
+
+    private void goLogin() {
+        mAuth.signOut();
+        Intent i = new Intent(this, Login.class);
+        Login.UID = "";
+        startActivity(i);
+    }
 }

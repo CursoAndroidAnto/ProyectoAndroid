@@ -63,19 +63,19 @@ public class CreateAccountFirebase extends AppCompatActivity implements View.OnC
 
         //Verificamos que las cajas de texto no estén vacías
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, "Usuario vacío", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Usuario vacío", Toast.LENGTH_LONG).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Contraseña vacía", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Contraseña vacía", Toast.LENGTH_LONG).show();
             return;
         }
         if (inMail.toString().equals(inMailC.toString())) {
-            Toast.makeText(this, "El correo no coincide", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "El correo no coincide", Toast.LENGTH_LONG).show();
             return;
         }
         if (inPass.toString().equals(inPassC.toString())) {
-            Toast.makeText(this, "La contraseña no coincide", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "La contraseña no coincide", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -92,14 +92,13 @@ public class CreateAccountFirebase extends AppCompatActivity implements View.OnC
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(CreateAccountFirebase.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CreateAccountFirebase.this, "Usuario registrado", Toast.LENGTH_LONG).show();
                             FirebaseUser user = mAuth.getCurrentUser();
-
                             redirectApp();
                             //updateUI(user);
                         } else {
                             String e = task.getException().toString();
-                            Toast.makeText(CreateAccountFirebase.this, e, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CreateAccountFirebase.this, e, Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
                     }

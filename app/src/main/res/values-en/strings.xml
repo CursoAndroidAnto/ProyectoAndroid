@@ -36,4 +36,17 @@
     <string name="hint_day">DD</string>
     <string name="hint_month">MM</string>
     <string name="hint_year">YYYY</string>
+    <string name="change_user_name">Change Username</string>
+    <string name="change_user_mail">Change user mail</string>
+    <string name="change_user_password">Change user password</string>
+    <string name="delete_user_account">Delete Account</string>
+    <string name="user_profile_updated">User profile updated.</string>
+    <string name="user_mail_updated">User email address updated.</string>
+    <string name="user_password_updated">User password updated.</string>
+    <string name="user_account_deleted">Your account has been deleted</string>
+    <string name="new_user_name">New Username</string>
+    <string name="new_user_password">New Password</string>
+    <string name="new_user_password_confirm">Repeat Password</string>
+    <string name="new_user_mail">New Mail</string>
+    <string name="are_you_sure">Are you sure?</string>
 </resources>

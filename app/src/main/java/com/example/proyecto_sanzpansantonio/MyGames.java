@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.proyecto_sanzpansantonio.Modelos.Game;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,7 @@ public class MyGames extends AppCompatActivity {
     private EditText inMyGamesFilter;
     private RecyclerView.Adapter myAdapter;
     private String uid;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public class MyGames extends AppCompatActivity {
         this.uid = Login.UID;
         this.rvMyGames = findViewById(R.id.rvMyGames);
         this.inMyGamesFilter = findViewById(R.id.inMyGamesFilter);
-
+        this.mAuth = FirebaseAuth.getInstance();
 
         BaseDatosHelper gamelistbd = new BaseDatosHelper(getApplicationContext(), "PROYECTOANDROID", null, 1);
         db = gamelistbd.getReadableDatabase();
@@ -62,6 +64,16 @@ public class MyGames extends AppCompatActivity {
 
     public void goIndex(View v) {
         Intent i = new Intent(this, Index.class);
+        startActivity(i);
+    }
+    private void logOut(View view) {
+        goLogin();
+    }
+
+    private void goLogin() {
+        mAuth.signOut();
+        Intent i = new Intent(this, Login.class);
+        Login.UID = "";
         startActivity(i);
     }
 }

@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.proyecto_sanzpansantonio.Modelos.Game;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class SearchGame extends AppCompatActivity {
     private RecyclerView rvSearchGame;
     private EditText inSearchGameFilter;
     private RecyclerView.Adapter myAdapter;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,8 @@ public class SearchGame extends AppCompatActivity {
         setContentView(R.layout.activity_search_game);
         rvSearchGame = findViewById(R.id.rvSearchGame);
         inSearchGameFilter = findViewById(R.id.inSearchGameFilter);
+        this.mAuth = FirebaseAuth.getInstance();
+
 
         Index.FILENAME = "SearchGame";
 
@@ -58,22 +62,23 @@ public class SearchGame extends AppCompatActivity {
             this.rvSearchGame.setLayoutManager(new LinearLayoutManager(this));
 
             Adaptador adapter = new Adaptador(data);
-       /*
-       adapter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(SearchGame.this, "Click en tarjeta" + data.get(rvSearchGame.getChildAdapterPosition(v)), Toast.LENGTH_LONG).show();
-            }
-        });
-
-        */
-        }
-
-        }
-
-        public void goIndex (View v){
-            Intent i = new Intent(this, Index.class);
-            startActivity(i);
         }
 
     }
+
+    public void goIndex(View v) {
+        Intent i = new Intent(this, Index.class);
+        startActivity(i);
+    }
+
+    private void logOut(View view) {
+        goLogin();
+    }
+
+    private void goLogin() {
+        mAuth.signOut();
+        Intent i = new Intent(this, Login.class);
+        Login.UID = "";
+        startActivity(i);
+    }
+}

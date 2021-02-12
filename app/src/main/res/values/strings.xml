@@ -58,5 +58,19 @@
 
     <!-- SEARCH GAME -->
 
+    <!-- OPTIONS -->
+    <string name="change_user_name">Cambiar nombre de usuario</string>
+    <string name="change_user_mail">Cambiar mail</string>
+    <string name="change_user_password">Cambiar contraseña</string>
+    <string name="delete_user_account">Borrar cuenta</string>
+    <string name="user_profile_updated">Perfil de usuario actualizado</string>
+    <string name="user_mail_updated">Correo electrónico actualizado</string>
+    <string name="user_password_updated">Contraseña actualizada</string>
+    <string name="user_account_deleted">Su cuenta ha sido eliminada correctamente</string>
+    <string name="new_user_name">Nuevo nombre de usuario</string>
+    <string name="new_user_password">Nueva contraseña</string>
+    <string name="new_user_password_confirm">Confirmar nueva contraseña</string>
+    <string name="new_user_mail">Nuevo mail</string>
+    <string name="are_you_sure">¿Estás seguro?</string>
 
 </resources>

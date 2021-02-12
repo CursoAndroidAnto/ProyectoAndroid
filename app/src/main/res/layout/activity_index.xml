@@ -20,7 +20,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="50px"
         android:orientation="vertical">
 
@@ -63,5 +63,22 @@
             android:layout_marginTop="20px"
             android:onClick="onClickButton"
             android:text="@string/index_options" />
+
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/btnLogOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="306dp"
+            android:layout_marginBottom="14dp"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@android:drawable/ic_lock_power_off" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
