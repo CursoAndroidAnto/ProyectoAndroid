@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 
@@ -41,6 +43,7 @@ public class MyGames extends AppCompatActivity {
 
         String query = "SELECT ID, NAME, GAME_DATE, GAME_HOUR, GAME_DURATION, ADDRESS, MAX_PLAYERS FROM GAME WHERE USERID=?";
         Cursor c = db.rawQuery(query, new String[]{uid});
+
         ArrayList<Game> data = new ArrayList<>();
         if (c.moveToFirst()) {
             do {
@@ -60,6 +63,27 @@ public class MyGames extends AppCompatActivity {
             this.rvMyGames.setHasFixedSize(true);
             this.rvMyGames.setLayoutManager(new LinearLayoutManager(this));
         }
+
+        //Listener OnChanged del editbox filtro
+        inMyGamesFilter.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //Antes
+                System.out.println("Before");
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                //Despues
+                System.out.println("After");
+            }
+        });
+
     }
 
     public void goIndex(View v) {
